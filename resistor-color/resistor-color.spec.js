@@ -9,7 +9,7 @@ describe('ResistorColor', () => {
     test('White', () => {
       expect(colorCode("white")).toEqual(9)
     })
-
+    
     test('Orange', () => {
       expect(colorCode("orange")).toEqual(3)
     })
