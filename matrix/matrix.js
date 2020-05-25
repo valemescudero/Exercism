@@ -1,27 +1,23 @@
-//
-// This is only a SKELETON file for the 'Matrix' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+
 
 export class Matrix {
   constructor(param) {
-    this.fila = param.split('\n').map(row => row.split(' ').map(srtNumber => Number(srtNumber)));
-    this.aux = [];
-   this.aux.push([''],['']);
-    console.log(this.aux)
-    this.columna = this.fila.map(filas => filas.map((columnas, i) => this.aux.push(columnas)));
+    this.filas = param.split('\n').map(row => row.split(' ').map(strNumber => Number(strNumber)));
 
+    this.cantCol = this.filas[0].length; // first row defines number of columns
+    this.columnas = [];
+    for (let i=0; i< this.cantCol; i++) {
+     this.columnas.push(this.filas.map(fila => fila[i]))
+    }
     
-    // rows = ["1 2", "3 4"]
-    // rows = [[1,2],[3,4]]
-    // rows = [["1","2"],["3","4"]]
+
   };
 
   get rows() {
-    return this.fila;
+    return this.filas;
   };
 
   get columns() {
-    return this.columna;
+    return this.columnas;
   };
 };
